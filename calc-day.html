@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="ключ, еще ключ">
+	<meta name="description" content="Красткое описание">
+	<link rel="stylesheet" href="css/style.min.css">
+	<title>Страница</title>
+</head>
+<body>
+<div class="wrapper">
+  <header class="page-header  page-header--inner">
+    <button class="hamburger hamburger--spring" type="button">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+    <a href="index.html">
+      <img class="page-header__logo" src="img/logo-1.svg" width="150" height="45" alt="Calculla" title="Calculla">
+    </a>
+  </header>
+<nav class="cd-side-navigation">
+    <ul>
+      <li>
+        <a href="#" class="selected" data-menu="calc-day">
+          <img src="img/icon-calen.svg" alt="">
+          Калькулятор рабочих дней
+        </a>
+      </li>
+
+      <li>
+        <a href="services.html" data-menu="services">
+          <img src="img/icon-text.svg" alt=""> <br>
+          Сумма прописью
+        </a>
+      </li>
+
+      <li>
+        <a href="projects.html" data-menu="projects">
+          <img src="img/icon-star.svg" alt="">
+          Калькулятор рабочих дней
+        </a>
+      </li>
+
+      <li>
+        <a href="contact.html" data-menu="contact">
+          <img src="img/icon-star.svg" alt="">
+          Калькулятор рабочих дней
+        </a>
+      </li>
+    </ul>
+  </nav> <!-- .cd-side-navigation -->
+
+  <main class="cd-main">
+    <section class="cd-section calc-day visible">
+    <div class="page-style">
+
+    </div>
+<div class="center-wrap">
+  <div class="center">
+    <div class="wrap">
+      <div class="area-wrap">
+        <div class="start-date">
+          Начальная&nbsp;дата:
+        </div>
+        <input class="area" placeholder="0">
+      </div>
+      <div class="days-wrap">
+        <div class="days-descr">Рабочих дней</div>
+        <input type="text" class="days" maxlength="3" placeholder="0">
+      </div>
+      <span>
+        +
+      </span>
+    </div>
+    <div class="calendar">
+      <div class="datepicker-here"></div>
+      <label class="slider__button  slider__button--toggle" for="slider__input-2">Далее</label>
+    </div>
+    <div class="numbers">
+      <div class="ogo-wrap">
+        <span class="ogo-descr">Конечная дата:</span>
+        <div class="ogo"></div>
+        <div class="day-name"></div>
+        <div class="ogo-letter"></div>
+        <div class="info"></div>
+      </div>
+      <div class="keyboard">
+        <div class="key">1</div>
+        <div class="key">2</div>
+        <div class="key">3</div>
+        <div class="key">4</div>
+        <div class="key">5</div>
+        <div class="key">6</div>
+        <div class="key">7</div>
+        <div class="key">8</div>
+        <div class="key">9</div>
+        <div class="key">0</div>
+        <div class="del"></div>
+        <div class="open"></div>
+      </div>
+    </div>
+    <div class="overlay">
+      Калькулятор рабочих дней
+    </div>
+    <div class="holydays">
+      <button class="holydays__close">X</button>
+      <div class="holydays__wrap">
+       <i>Помимо выходных, также учтены праздники на 2017:</i>
+        <ul>
+          <li>
+            <span>январь</span>
+            <b>1-8</b>
+          </li>
+          <li>
+            <span>февраль</span>
+            <b>23-26</b>
+          </li>
+          <li>
+            <span>март</span>
+            <b>8</b>
+          </li>
+          <li>
+            <span>апрель</span>
+            <b>29-30</b>
+          </li>
+          <li>
+            <span>май</span>
+            <b>1, 8,9</b>
+          </li>
+          <li>
+            <span>июнь</span>
+            <b>10-12</b>
+          </li>
+          <li>
+            <span>ноябрь</span>
+            <b>4-6</b>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="attention">
+      <div class="attention__wrap">
+        <div class="attention__close">X</div>
+        Вы вышли за пределы <span class="attention__year">2017</span> года.
+        В выбранном диапазоне дат <span class="attention__info">праздничные дни могут быть некорректны</span>, так как они еще не были утверждены правительством РФ.
+        <span class="attention__weekends">Калькулятор учитывает только выходные дни.</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section> <!-- .cd-section -->
+  </main> <!-- .cd-main -->
+
+  <div id="cd-loading-bar" data-scale="1" class="calc-day"></div> <!-- lateral loading bar -->
+</div>
+<script src="js/main.js"></script>
+<script src="js/calc-day.js"></script>
+</body>
+</html>
+
+
+
