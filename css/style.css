@@ -561,7 +561,7 @@ textarea {
    License: none (public domain)
 */
 .page-header {
-  padding-top: 20px;
+  padding-top: 35px;
   position: relative;
   background-color: white;
   z-index: 10;
@@ -577,6 +577,7 @@ textarea {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 20px 0;
 }
 .page-content {
   width: 280px;
