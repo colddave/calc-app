@@ -191,7 +191,7 @@ var mapNumbers = {
 };
 
 var mapOrders = [
-    { _Gender : true, _arrStates : ["рубль", "рубля", "рублей"] },
+    { _Gender : true, _arrStates : [") рубль", ") рубля", ") рублей"] },
     { _Gender : false, _arrStates : ["тысяча", "тысячи", "тысяч"] },
     { _Gender : true, _arrStates : ["миллион", "миллиона", "миллионов"] },
     { _Gender : true, _arrStates : ["миллиард", "миллиарда", "миллиардов"] },
@@ -277,7 +277,7 @@ function FloatToSamplesInWordsRus(fAmount)
 
     if (arrRet.length > 0) {
         // Capitalize first letter
-        arrRet[0] = arrRet[0].match(/^(.)/)[1].toLocaleUpperCase() + arrRet[0].match(/^.(.*)$/)[1];
+        arrRet[0] = "(" + arrRet[0].match(/^(.)/)[1].toLocaleUpperCase() + arrRet[0].match(/^.(.*)$/)[1];
     }
 
     arrRet.push((fDec < 10) ? ("0" + fDec) : ("" + fDec));
@@ -759,7 +759,7 @@ $(document).ready(function(){
   $('#mask').val("0");
 
   function numm (){
-    var c = accounting.formatMoney($('#mask').val(), "руб.", 2, " ", ".", "%v %s");
+    var c = accounting.formatMoney($('#mask').val(), "руб.", 2, " ", ",", "%v %s");
     $(".haha").html(c);
     var g  = $('#mask').val().replace(/\s+/g,'');
     $(".rezultcena").html(FloatToSamplesInWordsRus(parseFloat(g)));
@@ -769,6 +769,7 @@ $(document).ready(function(){
     } else{
       $(".display__descr").html("Введите сумму:");
     }
+    $('.rezultcena').html($('.rezultcena').html().replace(' )', ')'));
   } numm();
 
 
@@ -777,19 +778,39 @@ $(document).ready(function(){
   });
 
 
-  $('.key').click(function() {
+  $('.key--number').click(function() {
   if ($('#mask').val().length !== 14){
     var num = $(this).text();
     $('#mask').val($('#mask').val() + num);
     numm();
   }
+  if ($('.haha').hasClass("haha--cent-1")){
+    $('.haha').addClass("haha--cent-2");
+  }
+});
+  $('.key--dot').click(function() {
+  if ($('#mask').val().length !== 14 && !$('.haha').hasClass("haha--cent-1")){
+    var num = $(this).text();
+    $('#mask').val($('#mask').val() + num);
+    numm();
+    $('.haha').addClass("haha--cent-1");
+  }
 });
 
   $('.del').click(function() {
-    if($('#mask').val() > 0){
-      var a = $('#mask').val().slice(0,-1);
+    var a;
+    if($('.haha').hasClass("haha--cent-1")){
+      $('.haha').removeClass("haha--cent-1");
+      $('.haha').removeClass("haha--cent-2");
+      a = $('#mask').val().slice(0,-5);
       $('#mask').val(a);
       numm();
+    } else{
+      if($('#mask').val() > 0){
+        a = $('#mask').val().slice(0,-1);
+        $('#mask').val(a);
+        numm();
+      }
     }
   });
 

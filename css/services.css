@@ -23,3 +23,9 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 .haha::after {
     right: 64.1px;
 }
+.haha--cent-1::after {
+    right: 54.1px;
+}
+.haha--cent-2::after {
+    right: 44.1px;
+}
