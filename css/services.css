@@ -44,3 +44,6 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   background-color: transparent;
   border-color: transparent;
 }
+.rezultcena{
+  line-height: 16px;
+}

@@ -2730,6 +2730,9 @@ legend {
 .center-wrap {
   height: 437px;
 }
+.ogo-letter {
+  line-height: 16px;
+}
 .main-items {
   width: 280px;
   padding: 0 20px;
