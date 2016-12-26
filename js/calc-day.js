@@ -18796,12 +18796,6 @@ $('.attention__close').click(function() {
 
 
 
-$('.hamburger').on('click',function(e){
-    e.preventDefault();
-    $('.hamburger').toggleClass('is-active');
-    $('.cd-side-navigation').toggleClass('cd-side-navigation--show');
-    //$('.cd-section').toggleClass('cd-section--show');
-});
 
 
 

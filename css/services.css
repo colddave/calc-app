@@ -29,3 +29,18 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 .haha--cent-2::after {
     right: 44.1px;
 }
+.display{
+  position: relative;
+}
+#clip{
+  position: absolute;
+  top:0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-image: url("../img/icon-copy.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border-color: transparent;
+}
