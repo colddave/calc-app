@@ -755,14 +755,21 @@ function FloatToSamplesInWordsRus(fAmount)
 //динамически переводит цифры
 $(document).ready(function(){
 
-  //$('#mask').priceFormat();
+
+  $('#mask').val("0");
 
   function numm (){
     var c = accounting.formatMoney($('#mask').val(), "руб.", 2, " ", ".", "%v %s");
     $(".haha").html(c);
     var g  = $('#mask').val().replace(/\s+/g,'');
     $(".rezultcena").html(FloatToSamplesInWordsRus(parseFloat(g)));
-  }
+    console.log(g);
+    if($('#mask').val() > 1){
+      $(".display__descr").html("Сумма:");
+    } else{
+      $(".display__descr").html("Введите сумму:");
+    }
+  } numm();
 
 
   $('#mask').keyup(function rav (){
@@ -771,7 +778,7 @@ $(document).ready(function(){
 
 
   $('.key').click(function() {
-  if ($('#mask').val().length !== 15){
+  if ($('#mask').val().length !== 14){
     var num = $(this).text();
     $('#mask').val($('#mask').val() + num);
     numm();
@@ -779,9 +786,11 @@ $(document).ready(function(){
 });
 
   $('.del').click(function() {
-    var a = $('#mask').val().slice(0,-1);
-    $('#mask').val(a);
-    numm();
+    if($('#mask').val() > 0){
+      var a = $('#mask').val().slice(0,-1);
+      $('#mask').val(a);
+      numm();
+    }
   });
 
 

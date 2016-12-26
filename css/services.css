@@ -10,3 +10,16 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   //height: 21px;
     right: 64px;
 }
+.display__descr{
+  font-size: 12.2px;
+  padding-bottom: 10px;
+}
+#mask {
+  width: 100%;
+}
+.haha{
+  min-height: 19px;
+}
+.haha::after {
+    right: 64.1px;
+}
