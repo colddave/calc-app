@@ -837,7 +837,11 @@ var client = new ZeroClipboard( $("#clip"), {
     if($('.haha').hasClass("haha--cent-1")){
       $('.haha').removeClass("haha--cent-1");
       $('.haha').removeClass("haha--cent-2");
+      if ($('#mask').val().length>4){
       a = $('#mask').val().substring(0, $('#mask').val().length-3);
+    } else{
+      a = $('#mask').val().slice(0,-3);
+    }
       $('#mask').val(a);
       numm();
     } else{
